@@ -16,3 +16,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4000:4000"
+    depends_on:
+      - redis
+
+  redis:  # Define the Redis service
+    image: redis
+    ports:
+      - "6379:6379"
